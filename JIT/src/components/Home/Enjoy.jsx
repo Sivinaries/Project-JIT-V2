@@ -16,8 +16,12 @@ function Enjoy() {
                             <h1 className='text-lg md:text-4xl text-white font-light text-center'>Student Immersion</h1>
                         </div>
                     </div>
-                    <div className='md:flex gap-4 md:gap-4 grid'>
-                        <div className='space-y-4 md:space-y-12 md:w-1/2 my-auto order-2'>
+                    <div className=''>
+                    <div className='md:w-1/2'>
+                            <img className='w-full h-full' src={immertion} alt="" />
+                        </div>
+
+                        <div className='space-y-4 md:space-y-12 md:w-1/2 my-auto'>
                             <div>
                                 <h1 className='text-white text-2xl md:text-5xl font-semibold'>Enjoy a Study Tour Experience</h1>
                                 <h1 className='text-white text-2xl md:text-5xl font-semibold'> Like Never Before</h1>
@@ -25,7 +29,7 @@ function Enjoy() {
                             <div>
                                 <h1 className='text-white text-base md:text-xl font-light'>Join us for an unforgettable journey where learning meets adventure. Our study tours are carefully designed to offer a perfect balance of education, exploration, and enjoyment. Whether you're traveling with classmates, colleagues, or friends, we ensure every aspect of your trip is taken care of, leaving you free to focus on making memories and gaining valuable knowledge.</h1>
                             </div>
-                            <div className='md:flex space-y-4 md:space-y-0 md:gap-6'>
+                            {/* <div className='md:flex space-y-4 md:space-y-0 md:gap-6'>
                                 <div className='my-auto'>
                                     <div className='w-16 h-16 mx-auto'>
                                         <img className='w-full h-full' src={safe} alt="" />
@@ -62,10 +66,7 @@ function Enjoy() {
                                     <h1 className='text-white text-base md:text-xl font-light'>
                                         Stay in cozy accommodations with modern amenities for a comfortable and refreshing experience throughout your trip.                                    </h1>
                                 </div>
-                            </div>
-                        </div>
-                        <div className='md:w-1/2 order-1'>
-                            <img className='w-full h-full' src={immertion} alt="" />
+                            </div> */}
                         </div>
                     </div>
                 </div>

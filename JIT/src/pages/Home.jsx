@@ -9,6 +9,10 @@ import About from '../components/Home/About'
 import Contact from '../components/Home/Contact'
 import Indo from '../components/Home/Indo'
 import Layanan from '../components/Home/Layanan'
+import Partner from '../components/Home/Partner'
+import Galery from '../components/Home/Galery'
+import Testi from '../components/Home/Testi'
+import Exp from '../components/Home/Exp'
 
 function Home() {
     return (
@@ -18,11 +22,15 @@ function Home() {
                 <Hero />
                 <Whatsapp />
                 <About />
+                <Exp />
                 <Layanan />
                 <Journey />
                 <Indo />
                 <Enjoy />
+                <Galery />
                 <Why />
+                <Partner />
+                <Testi />
                 <Contact />
             </div>
             <Footer />

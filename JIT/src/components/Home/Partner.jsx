@@ -1,13 +1,13 @@
+import React from 'react'
 
-
-function Layanan() {
+function Partner() {
     return (
         <section id='service'>
             <div className='grid grid-cols-1 bg-black h-full'>
                 <div className='my-8 md:my-20 space-y-4 md:space-y-6'>
                     <div className='mx-4 space-y-8 md:space-y-10 md:mx-20'>
                         <div>
-                            <h1 className='text-2xl md:text-7xl text-white font-semibold text-center'>🌍 Our Services!</h1>
+                            <h1 className='text-2xl md:text-7xl text-white font-semibold text-center'>🌍 Our Partner!</h1>
                         </div>
                     </div>
                 </div>
@@ -16,4 +16,4 @@ function Layanan() {
     )
 }
 
-export default Layanan
+export default Partner
