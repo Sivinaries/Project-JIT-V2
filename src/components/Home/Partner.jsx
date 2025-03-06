@@ -8,6 +8,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
+import { motion } from 'framer-motion';
+
+const viewportSettings = { once: true, amount: 0.2 };
+
+const imageMotion = {
+    initial: { opacity: 0, scale: 0.8 },
+    whileInView: { opacity: 1, scale: 1 },
+    transition: { duration: 0.8 },
+    viewport: viewportSettings,
+};
 
 function Partner() {
     const partners = [airasia, garuda, batik, citilink, lion, sriwijaya];
@@ -35,9 +45,20 @@ function Partner() {
                             >
                                 {partners.map((partner, index) => (
                                     <SwiperSlide key={index} className='flex justify-center'>
-                                        <div className='w-full h-[60px] md:w-[150px] md:h-[150px] lg:w-[200px] lg:h-[200px] flex items-center justify-center'>
-                                            <img src={partner} alt={`Partner ${index + 1}`} className='w-full h-full object-contain' />
-                                        </div>
+                                        <motion.div
+                                            initial="initial"
+                                            whileInView="whileInView"
+                                            transition="transition"
+                                            viewport="viewport"
+                                            variants={imageMotion}
+                                            className='w-full h-[60px] md:w-[150px] md:h-[150px] lg:w-[200px] lg:h-[200px] flex items-center justify-center'
+                                        >
+                                            <img
+                                                src={partner}
+                                                alt={`Partner ${index + 1}`}
+                                                className='w-full h-full object-contain'
+                                            />
+                                        </motion.div>
                                     </SwiperSlide>
                                 ))}
                             </Swiper>

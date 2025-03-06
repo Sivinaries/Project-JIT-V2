@@ -7,6 +7,24 @@ import comfort from '../../assets/images/comfort.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
+import { motion } from 'framer-motion';
+
+const viewportSettings = { once: true, amount: 0.2 };
+
+const imageMotion = {
+    initial: { opacity: 0, scale: 0.8 },
+    whileInView: { opacity: 1, scale: 1 },
+    transition: { duration: 0.8 },
+    viewport: viewportSettings,
+};
+
+const textMotion = {
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    transition: { delay: 0.5, duration: 1 },
+    viewport: viewportSettings,
+  };
+  
 
 const whyItems = [
     { image: learn, title1: "Hands-On", title2: "Learning", description: "Engage in interactive workshops and real-world experiences." },
@@ -22,9 +40,9 @@ function Why() {
         <div className='grid grid-cols-1 bg-black h-full'>
             <div className='my-8 md:my-20'>
                 <div className='mx-4 space-y-4 md:space-y-20 md:mx-20'>
-                    <div>
+                    <motion.div {...textMotion}>
                         <h1 className='text-2xl md:text-7xl text-white font-semibold text-center'>Why Choose Us</h1>
-                    </div>
+                    </motion.div>
 
                     {/* Swiper for Mobile */}
                     <div className="md:hidden">
@@ -37,16 +55,22 @@ function Why() {
                         >
                             {whyItems.map((item, index) => (
                                 <SwiperSlide key={index}>
-                                    <div className='flex flex-col items-center justify-between bg-gray-900 rounded-3xl p-4 h-full w-full mx-auto'>
-                                        <div className='w-16 h-16'>
+                                    <motion.div 
+                                        initial={{ opacity: 0, scale: 0.9 }} 
+                                        whileInView={{ opacity: 1, scale: 1 }} 
+                                        transition={{ duration: 0.6 }} 
+                                        viewport={viewportSettings}
+                                        className='flex flex-col items-center justify-between bg-gray-900 rounded-3xl p-4 h-full w-full mx-auto'
+                                    >
+                                        <motion.div {...imageMotion} className='w-16 h-16'>
                                             <img className='w-full h-full object-contain' src={item.image} alt={item.title1} />
-                                        </div>
+                                        </motion.div>
                                         <div className='text-center flex flex-col justify-center flex-1'>
-                                            <h1 className='text-white text-lg font-semibold'>{item.title1}</h1>
-                                            <h1 className='text-white text-lg font-semibold'>{item.title2}</h1>
-                                            <h1 className='text-white text-sm font-light'>{item.description}</h1>
+                                            <motion.h1 {...textMotion} className='text-white text-lg font-semibold'>{item.title1}</motion.h1>
+                                            <motion.h1 {...textMotion} className='text-white text-lg font-semibold'>{item.title2}</motion.h1>
+                                            <motion.h1 {...textMotion} className='text-white text-sm font-light'>{item.description}</motion.h1>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
@@ -55,16 +79,23 @@ function Why() {
                     {/* Grid Layout for Desktop */}
                     <div className="hidden md:grid grid-cols-3 gap-6">
                         {whyItems.map((item, index) => (
-                            <div key={index} className='flex flex-col items-center justify-between bg-gray-900 rounded-3xl p-6 h-full w-full mx-auto'>
-                                <div className='w-24 h-24'>
+                            <motion.div 
+                                key={index} 
+                                initial={{ opacity: 0, scale: 0.9 }} 
+                                whileInView={{ opacity: 1, scale: 1 }} 
+                                transition={{ duration: 0.6 }} 
+                                viewport={viewportSettings}
+                                className='flex flex-col items-center justify-between bg-gray-900 rounded-3xl p-6 h-full w-full mx-auto'
+                            >
+                                <motion.div {...imageMotion} className='w-24 h-24'>
                                     <img className='w-full h-full object-contain' src={item.image} alt={item.title1} />
-                                </div>
+                                </motion.div>
                                 <div className='text-center flex flex-col justify-center flex-1'>
-                                    <h1 className='text-white text-2xl font-semibold'>{item.title1}</h1>
-                                    <h1 className='text-white text-2xl font-semibold'>{item.title2}</h1>
-                                    <h1 className='text-white text-base font-light'>{item.description}</h1>
+                                    <motion.h1 {...textMotion} className='text-white text-2xl font-semibold'>{item.title1}</motion.h1>
+                                    <motion.h1 {...textMotion} className='text-white text-2xl font-semibold'>{item.title2}</motion.h1>
+                                    <motion.h1 {...textMotion} className='text-white text-base font-light'>{item.description}</motion.h1>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>

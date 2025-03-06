@@ -8,6 +8,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
+import { motion } from 'framer-motion';
+
+const viewportSettings = { once: true, amount: 0.2 };
+
+const imageMotion = {
+  initial: { opacity: 0, scale: 0.8 },
+  whileInView: { opacity: 1, scale: 1 },
+  transition: { duration: 0.8 },
+  viewport: viewportSettings,
+};
 
 function Galery() {
   return (
@@ -32,13 +42,20 @@ function Galery() {
               >
                 {[img1, img2, img3, img4, img5, img6].map((img, index) => (
                   <SwiperSlide key={index} className="flex justify-center">
-                    <div className="w-full h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]">
+                    <motion.div
+                      initial="initial"
+                      whileInView="whileInView"
+                      transition="transition"
+                      viewport="viewport"
+                      variants={imageMotion}
+                      className="w-full h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] rounded-3xl overflow-hidden"
+                    >
                       <img
                         src={img}
                         alt={`Gallery ${index + 1}`}
-                        className="w-full h-full object-cover rounded-3xl"
+                        className="w-full h-full object-cover"
                       />
-                    </div>
+                    </motion.div>
                   </SwiperSlide>
                 ))}
               </Swiper>

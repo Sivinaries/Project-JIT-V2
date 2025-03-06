@@ -6,6 +6,16 @@ import { BsArrowUpRightCircle } from "react-icons/bs";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import { motion } from 'framer-motion';
+
+const MotionDiv = motion.div;
+const viewportSettings = { once: true, amount: 0.2 };
+const imageMotion = {
+    initial: { opacity: 0, scale: 0.8 },
+    whileInView: { opacity: 1, scale: 1 },
+    transition: { duration: 0.8 },
+    viewport: viewportSettings,
+};
 
 function Indo() {
     const destinations = [
@@ -21,12 +31,18 @@ function Indo() {
                 <div className='my-8 md:my-20 space-y-4 md:space-y-6'>
                     <div className='mx-4 space-y-4 md:space-y-6 md:mx-20'>
                         <div className='md:flex justify-between'>
-                            <div>
-                                <h1 className='text-xl md:text-5xl text-white font-semibold text-center'>🇮🇩 Explore the Beauty of Indonesia!</h1>
-                            </div>
-                            <div className='my-auto'>
-                                <h1 className='text-lg md:text-4xl text-white font-light text-center'>Inbound</h1>
-                            </div>
+                            <motion.h1
+                                className='text-xl md:text-5xl text-white font-semibold text-center'
+                                {...imageMotion}
+                            >
+                                🇮🇩 Explore the Beauty of Indonesia!
+                            </motion.h1>
+                            <motion.h1
+                                className='text-lg md:text-4xl text-white font-light text-center my-auto'
+                                {...imageMotion}
+                            >
+                                Inbound
+                            </motion.h1>
                         </div>
 
                         {/* Swiper for Mobile */}
@@ -40,7 +56,7 @@ function Indo() {
                             >
                                 {destinations.map((item, index) => (
                                     <SwiperSlide key={index}>
-                                        <div className="relative">
+                                        <MotionDiv className="relative" {...imageMotion}>
                                             <img src={item.image} alt={item.title} className="w-full h-72 rounded-3xl object-cover" />
                                             <div className='absolute bottom-6 left-6 right-6'>
                                                 <div className='flex justify-between'>
@@ -50,7 +66,7 @@ function Indo() {
                                                     <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
                                                 </div>
                                             </div>
-                                        </div>
+                                        </MotionDiv>
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
@@ -59,7 +75,7 @@ function Indo() {
                         {/* Grid Layout for Desktop */}
                         <div className="hidden md:block space-y-6">
                             <div className="relative md:flex space-y-4 md:space-y-0 gap-6">
-                                <div className="relative flex-shrink-0 md:w-3/4">
+                                <MotionDiv className="relative flex-shrink-0 md:w-3/4" {...imageMotion}>
                                     <img src={borobudur} alt="Borobudur" className="w-full h-72 object-cover rounded-3xl" />
                                     <div className='absolute bottom-6 left-6 right-6'>
                                         <div className='flex justify-between'>
@@ -67,8 +83,8 @@ function Indo() {
                                             <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
                                         </div>
                                     </div>
-                                </div>
-                                <div className="relative flex-shrink-0 md:w-1/4">
+                                </MotionDiv>
+                                <MotionDiv className="relative flex-shrink-0 md:w-1/4" {...imageMotion}>
                                     <img src={smg} alt="Semarang" className="w-full h-72 object-cover rounded-3xl" />
                                     <div className='absolute bottom-6 left-6 right-6'>
                                         <div className='flex justify-between'>
@@ -76,11 +92,11 @@ function Indo() {
                                             <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
                                         </div>
                                     </div>
-                                </div>
+                                </MotionDiv>
                             </div>
 
                             <div className="relative md:flex space-y-4 md:space-y-0 gap-6">
-                                <div className="relative flex-shrink-0 md:w-1/4">
+                                <MotionDiv className="relative flex-shrink-0 md:w-1/4" {...imageMotion}>
                                     <img src={bromo} alt="Bromo" className="w-full h-72 object-cover rounded-3xl" />
                                     <div className='absolute bottom-6 left-6 right-6'>
                                         <div className='flex justify-between'>
@@ -88,8 +104,8 @@ function Indo() {
                                             <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
                                         </div>
                                     </div>
-                                </div>
-                                <div className="relative flex-shrink-0 md:w-3/4">
+                                </MotionDiv>
+                                <MotionDiv className="relative flex-shrink-0 md:w-3/4" {...imageMotion}>
                                     <img src={karimun} alt="Karimun" className="w-full h-72 object-cover rounded-3xl" />
                                     <div className='absolute bottom-6 left-6 right-6'>
                                         <div className='flex justify-between'>
@@ -97,10 +113,9 @@ function Indo() {
                                             <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
                                         </div>
                                     </div>
-                                </div>
+                                </MotionDiv>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
