@@ -63,7 +63,7 @@ function Contact() {
             return;
         }
 
-        const phone_number = '6282139915859';
+        const phone_number = '6282139915898';
         const whatsappMessage = `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`;
         const encodedMessage = encodeURIComponent(whatsappMessage);
         const whatsappLink = `https://wa.me/${phone_number}?text=${encodedMessage}`;

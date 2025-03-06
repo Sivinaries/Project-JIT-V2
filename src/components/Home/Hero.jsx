@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import bg from '../../assets/images/bg.png';
 import school from '../../assets/images/school.png';
+import { Link } from 'react-router-dom';
 
 const MotionDiv = motion.div;
 
@@ -59,9 +60,9 @@ function Hero() {
 
           <div className='grid md:flex justify-between gap-6'>
             <MotionDiv {...buttonMotion} className='p-2 md:p-4 bg-cyan-500 w-full md:w-fit h-fit rounded-full order-2 md:order-none'>
-              <a href="">
-                <h1 className='text-white font-semibold text-2xl md:text-4xl text-center px-4 md:px-6'>Book Now</h1>
-              </a>
+            <Link to="https://api.whatsapp.com/send/?phone=6282139915898&text&type=phone_number&app_absent=0" target='blank'>
+            <h1 className='text-white font-semibold text-2xl md:text-4xl text-center px-4 md:px-6'>Book Now</h1>
+              </Link>
             </MotionDiv>
             
             <MotionDiv {...imageMotion} className='p-2 bg-gray-500 backdrop-blur-sm bg-opacity-40 rounded-3xl order-1 md:order-none w-96 md:w-3/4'>

@@ -17,7 +17,7 @@ function Whatsapp() {
         </button>
       </div>
       <div className="z-50 fixed bottom-12 left-10 opacity-85 shadow-emerald-200 hover:opacity-100">
-        <Link to="">
+        <Link to="https://api.whatsapp.com/send/?phone=6282139915898&text&type=phone_number&app_absent=0" target="blank">
           <img src={wa} alt="WhatsApp Logo" className="w-12 h-12 md:w-14 md:h-14" />
         </Link>
       </div>

@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const MotionDiv = motion.div;
 const viewportSettings = { once: true, amount: 0.2 };
@@ -57,15 +58,17 @@ function Indo() {
                                 {destinations.map((item, index) => (
                                     <SwiperSlide key={index}>
                                         <MotionDiv className="relative" {...imageMotion}>
-                                            <img src={item.image} alt={item.title} className="w-full h-72 rounded-3xl object-cover" />
-                                            <div className='absolute bottom-6 left-6 right-6'>
-                                                <div className='flex justify-between'>
-                                                    <h1 className="text-white font-semibold text-3xl">
-                                                        {item.title}
-                                                    </h1>
-                                                    <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                            <Link to="https://api.whatsapp.com/send/?phone=6282139915898&text&type=phone_number&app_absent=0" target='blank'>
+                                                <img src={item.image} alt={item.title} className="w-full h-72 rounded-3xl object-cover" />
+                                                <div className='absolute bottom-6 left-6 right-6'>
+                                                    <div className='flex justify-between'>
+                                                        <h1 className="text-white font-semibold text-3xl">
+                                                            {item.title}
+                                                        </h1>
+                                                        <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </Link>
                                         </MotionDiv>
                                     </SwiperSlide>
                                 ))}
@@ -76,43 +79,51 @@ function Indo() {
                         <div className="hidden md:block space-y-6">
                             <div className="relative md:flex space-y-4 md:space-y-0 gap-6">
                                 <MotionDiv className="relative flex-shrink-0 md:w-3/4" {...imageMotion}>
-                                    <img src={borobudur} alt="Borobudur" className="w-full h-72 object-cover rounded-3xl" />
-                                    <div className='absolute bottom-6 left-6 right-6'>
-                                        <div className='flex justify-between'>
-                                            <h1 className="text-white font-semibold text-3xl">Candi Borobudur</h1>
-                                            <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                    <Link to="https://api.whatsapp.com/send/?phone=6282139915898&text&type=phone_number&app_absent=0" target='blank'>
+                                        <img src={borobudur} alt="Borobudur" className="w-full h-72 object-cover rounded-3xl" />
+                                        <div className='absolute bottom-6 left-6 right-6'>
+                                            <div className='flex justify-between'>
+                                                <h1 className="text-white font-semibold text-3xl">Candi Borobudur</h1>
+                                                <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </MotionDiv>
                                 <MotionDiv className="relative flex-shrink-0 md:w-1/4" {...imageMotion}>
-                                    <img src={smg} alt="Semarang" className="w-full h-72 object-cover rounded-3xl" />
-                                    <div className='absolute bottom-6 left-6 right-6'>
-                                        <div className='flex justify-between'>
-                                            <h1 className="text-white font-semibold text-3xl">Semarang</h1>
-                                            <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                    <Link to="https://api.whatsapp.com/send/?phone=6282139915898&text&type=phone_number&app_absent=0" target='blank'>
+                                        <img src={smg} alt="Semarang" className="w-full h-72 object-cover rounded-3xl" />
+                                        <div className='absolute bottom-6 left-6 right-6'>
+                                            <div className='flex justify-between'>
+                                                <h1 className="text-white font-semibold text-3xl">Semarang</h1>
+                                                <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </MotionDiv>
                             </div>
 
                             <div className="relative md:flex space-y-4 md:space-y-0 gap-6">
                                 <MotionDiv className="relative flex-shrink-0 md:w-1/4" {...imageMotion}>
-                                    <img src={bromo} alt="Bromo" className="w-full h-72 object-cover rounded-3xl" />
-                                    <div className='absolute bottom-6 left-6 right-6'>
-                                        <div className='flex justify-between'>
-                                            <h1 className="text-white font-semibold text-3xl">Bromo</h1>
-                                            <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                    <Link to="https://api.whatsapp.com/send/?phone=6282139915898&text&type=phone_number&app_absent=0" target='blank'>
+                                        <img src={bromo} alt="Bromo" className="w-full h-72 object-cover rounded-3xl" />
+                                        <div className='absolute bottom-6 left-6 right-6'>
+                                            <div className='flex justify-between'>
+                                                <h1 className="text-white font-semibold text-3xl">Bromo</h1>
+                                                <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </MotionDiv>
                                 <MotionDiv className="relative flex-shrink-0 md:w-3/4" {...imageMotion}>
-                                    <img src={karimun} alt="Karimun" className="w-full h-72 object-cover rounded-3xl" />
-                                    <div className='absolute bottom-6 left-6 right-6'>
-                                        <div className='flex justify-between'>
-                                            <h1 className="text-white font-semibold text-3xl">Karimun Jawa</h1>
-                                            <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                    <Link to="https://api.whatsapp.com/send/?phone=6282139915898&text&type=phone_number&app_absent=0" target='blank'>
+                                        <img src={karimun} alt="Karimun" className="w-full h-72 object-cover rounded-3xl" />
+                                        <div className='absolute bottom-6 left-6 right-6'>
+                                            <div className='flex justify-between'>
+                                                <h1 className="text-white font-semibold text-3xl">Karimun Jawa</h1>
+                                                <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </MotionDiv>
                             </div>
                         </div>

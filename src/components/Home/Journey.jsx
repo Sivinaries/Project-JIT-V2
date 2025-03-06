@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const MotionDiv = motion.div;
 
@@ -59,15 +60,17 @@ function Journey() {
                                 {travelDestinations.map((item, index) => (
                                     <SwiperSlide key={index}>
                                         <MotionDiv className="relative" {...imageMotion}>
-                                            <img src={item.image} alt={item.title} className="w-full h-72 rounded-3xl object-cover" />
-                                            <div className='absolute bottom-6 left-6 right-6'>
-                                                <div className='flex justify-between'>
-                                                    <h1 className="text-white font-semibold text-3xl">
-                                                        {item.title}
-                                                    </h1>
-                                                    <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                            <Link to="https://api.whatsapp.com/send/?phone=6282139915898&text&type=phone_number&app_absent=0" target='blank'>
+                                                <img src={item.image} alt={item.title} className="w-full h-72 rounded-3xl object-cover" />
+                                                <div className='absolute bottom-6 left-6 right-6'>
+                                                    <div className='flex justify-between'>
+                                                        <h1 className="text-white font-semibold text-3xl">
+                                                            {item.title}
+                                                        </h1>
+                                                        <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </Link>
                                         </MotionDiv>
                                     </SwiperSlide>
                                 ))}
@@ -79,15 +82,17 @@ function Journey() {
                             <div className="relative md:flex space-y-4 md:space-y-0 gap-6">
                                 {/* Singapore Section */}
                                 <MotionDiv className="relative flex-shrink-0" {...imageMotion}>
-                                    <img src={sgp} alt="Singapore" className="w-full h-72 md:h-full object-fill rounded-3xl" />
-                                    <div className='absolute bottom-6 left-6 right-6'>
-                                        <div className='flex justify-between'>
-                                            <h1 className="text-white font-semibold text-3xl">
-                                                Singapore
-                                            </h1>
-                                            <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                    <Link to="https://api.whatsapp.com/send/?phone=6282139915898&text&type=phone_number&app_absent=0" target='blank'>
+                                        <img src={sgp} alt="Singapore" className="w-full h-72 md:h-full object-fill rounded-3xl" />
+                                        <div className='absolute bottom-6 left-6 right-6'>
+                                            <div className='flex justify-between'>
+                                                <h1 className="text-white font-semibold text-3xl">
+                                                    Singapore
+                                                </h1>
+                                                <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </MotionDiv>
 
                                 {/* Japan, Malaysia, Thailand */}
@@ -95,28 +100,32 @@ function Journey() {
                                     <div className='md:flex flex-grow h-fit space-y-4 md:space-y-0 gap-2 md:gap-6'>
                                         {travelDestinations.slice(1, 3).map((item, index) => (
                                             <MotionDiv key={index} className="relative flex-grow" {...imageMotion}>
-                                                <img src={item.image} alt={item.title} className="w-full h-72 rounded-3xl object-fill" />
-                                                <div className='absolute bottom-6 left-6 right-6'>
-                                                    <div className='flex justify-between'>
-                                                        <h1 className="text-white font-semibold text-3xl">
-                                                            {item.title}
-                                                        </h1>
-                                                        <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                                <Link to="https://api.whatsapp.com/send/?phone=6282139915898&text&type=phone_number&app_absent=0" target='blank'>
+                                                    <img src={item.image} alt={item.title} className="w-full h-72 rounded-3xl object-fill" />
+                                                    <div className='absolute bottom-6 left-6 right-6'>
+                                                        <div className='flex justify-between'>
+                                                            <h1 className="text-white font-semibold text-3xl">
+                                                                {item.title}
+                                                            </h1>
+                                                            <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                </Link>
                                             </MotionDiv>
                                         ))}
                                     </div>
                                     <MotionDiv className="relative flex-grow" {...imageMotion}>
-                                        <img src={thai} alt="Thailand" className="w-full h-72 rounded-3xl object-fill" />
-                                        <div className='absolute bottom-6 left-6 right-6'>
-                                            <div className='flex justify-between'>
-                                                <h1 className="text-white font-semibold text-3xl">
-                                                    Thailand
-                                                </h1>
-                                                <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                        <Link to="https://api.whatsapp.com/send/?phone=6282139915898&text&type=phone_number&app_absent=0" target='blank'>
+                                            <img src={thai} alt="Thailand" className="w-full h-72 rounded-3xl object-fill" />
+                                            <div className='absolute bottom-6 left-6 right-6'>
+                                                <div className='flex justify-between'>
+                                                    <h1 className="text-white font-semibold text-3xl">
+                                                        Thailand
+                                                    </h1>
+                                                    <BsArrowUpRightCircle className='text-white text-2xl scale-125 my-auto' />
+                                                </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     </MotionDiv>
                                 </div>
                             </div>
