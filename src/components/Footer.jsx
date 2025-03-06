@@ -7,7 +7,7 @@ function Footer() {
     return (
         <footer className="h-fit w-full bg-black mx-auto">
             <div className="">
-                <div className="grid grid-cols-3 p-2 xl:p-10 space-y-4 xl:space-y-0 border-2">
+                <div className="grid grid-cols-3 p-2 xl:p-10 space-y-4 xl:space-y-0">
                     <div className="my-auto ">
                         <div className="w-28 md:w-56">
                             <img className="w-full h-full" src={logo} alt="" />
